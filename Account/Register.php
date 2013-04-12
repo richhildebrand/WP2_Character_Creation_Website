@@ -13,7 +13,7 @@ require_once("../Controllers/AccountController.php");
 <html>
     <?php HeaderHelper::DrawHeader(); ?>
     <body>
-        <h1>Register for Paul's Pizza Palace</h1>
+        <h1>Register</h1>
         <form method="post" >
             <label >Enter your email address</label>
             <input type="email" required autofocus name="email" />
