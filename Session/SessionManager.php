@@ -27,7 +27,7 @@ class SessionManager
 	{
 		session_start();
         $_SESSION['user_name'] = $userName;
-        
+
         header("Location: ../Account/Edit-Profile.php");
         //header("Location: ../Character/Select.php");
 	}
@@ -39,10 +39,6 @@ class SessionManager
 
 	public function DestorySession()
 	{
-		include_once("../Helpers/Logger.php");
-		$logger = new Logger();
-		$logger->write("Goodbye session");
-
 		session_unset();
 		session_destroy();
 		header("Location: ../index.html");
