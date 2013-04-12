@@ -5,7 +5,7 @@ class FooterHelper
 	public static function DrawSessionFooter()
 	{
 		print('<footer>');
-			print('<a href="../Character/Create.php">Create New</a>');
+			print('<a href="../Character/Create.php">Create New Character</a>');
 	        print('<a href="../Account/Edit-Profile.php">Edit Profile</a>');
 	    print('</footer>');
 	} 

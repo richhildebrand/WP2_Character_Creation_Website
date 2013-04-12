@@ -6,7 +6,8 @@ class StringHelper
 		return (!isset($question) || trim($question)==='');
 	}
 
-	public static function AreNullOrEmptyString($str1, $str2, $str3) {
-	    return IsNullOrEmptyString($str1) || IsNullOrEmptyString($str2) || IsNullOrEmptyString($str3);
+	public static function AreNullOrEmptyString($str1, $str2, $str3 = "notPassed", $str4 = "notPassed") {
+	    return IsNullOrEmptyString($str1) || IsNullOrEmptyString($str2) || 
+	    	   IsNullOrEmptyString($str3) || IsNullOrEmptyString($str4);
 	}
 }

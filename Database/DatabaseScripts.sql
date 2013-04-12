@@ -1,17 +1,16 @@
-DROP TABLE IF EXISTS classes, characters, members;
+DROP TABLE IF EXISTS races, classes, characters, members;
      
 CREATE TABLE members
-(  id INT(10) NOT NULL AUTO_INCREMENT, 
-   email VARCHAR(35) NOT NULL,
+(  email VARCHAR(35) NOT NULL,
    PASSWORD VARCHAR(250),
    firstname VARCHAR(15),
    lastname VARCHAR(25),   
-   PRIMARY KEY (id)
+   PRIMARY KEY (email)
 )  ENGINE = INNODB;
 
 CREATE TABLE characters
 (  id INT(10) NOT NULL AUTO_INCREMENT, 
-   member_id INT(10),
+   email VARCHAR(35) NOT NULL,
    name VARCHAR(35) NOT NULL,
    class VARCHAR(250) NOT NULL,
    race VARCHAR(250) NOT NULL,
@@ -19,7 +18,7 @@ CREATE TABLE characters
    level INT(10) NOT NULL,
    xp INT(10) NOT NULL,
    PRIMARY KEY (id),
-   FOREIGN KEY (member_id) REFERENCES members (id)
+   FOREIGN KEY (email) REFERENCES members (email)
 )  ENGINE = INNODB;
 
 CREATE TABLE classes
@@ -34,6 +33,7 @@ CREATE TABLE races
    PRIMARY KEY (name)
 )  ENGINE = INNODB;
 
+DELETE FROM races;
 DELETE FROM classes;
 DELETE FROM characters;
 DELETE FROM members;

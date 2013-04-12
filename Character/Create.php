@@ -17,11 +17,19 @@ $raceTemplateGenerator = new  RaceTemplateGenerator();
     <body>
         <h1>Create Character</h1>
         <form method="post" >
-            <label> Choose Your Class: </label>
+            <label>Name: </label>
+            <input name="CharacterName" type="Text" />            
+
+            <label>Class: </label>
             <?php $classTemplateGenerator->ListClasses(); ?>
 
-            <label> Choose Your Race: </label>
+            <label> Race: </label>
             <?php $raceTemplateGenerator->ListRaces(); ?>            
+
+            <label>Starting Level: </label>
+            <input name="StartingLevel" type="Number" />
+
+            <button name="CreateNewCharacter">Create This Character</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
         <script type="text/javascript" src="../Frontend/Scripts/confirmPasswordsMatch.js"></script>
