@@ -1,6 +1,6 @@
 <?php
 include_once("../Templates/ListItemTemplateGenerator.php");
-include_once("../Database/ClassRepository.php");
+include_once("../Database/RaceRepository.php");
 
 class RaceTemplateGenerator
 {
@@ -15,7 +15,7 @@ class RaceTemplateGenerator
 
 	public function ListRaces()
 	{
-		$races = $this->_classRepository->GetAllClasses();
+		$races = $this->_raceRepository->GetAllRaces();
 		foreach ($races as $race)
 		{
 			echo $this->_listItemTemplateGenerator->RadioTemplate('Races', $race['name'],
