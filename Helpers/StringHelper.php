@@ -7,7 +7,7 @@ class StringHelper
 	}
 
 	public static function AreNullOrEmptyString($str1, $str2, $str3 = "notPassed", $str4 = "notPassed") {
-	    return IsNullOrEmptyString($str1) || IsNullOrEmptyString($str2) || 
-	    	   IsNullOrEmptyString($str3) || IsNullOrEmptyString($str4);
+	    return StringHelper::IsNullOrEmptyString($str1) || StringHelper::IsNullOrEmptyString($str2) || 
+	    	   StringHelper::IsNullOrEmptyString($str3) || StringHelper::IsNullOrEmptyString($str4);
 	}
 }

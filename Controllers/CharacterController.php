@@ -8,11 +8,12 @@ if(isset($_POST['CreateNewCharacter']))
 	$level = $_POST['StartingLevel'];
 	$class = $_POST['Classes'];
 	$race = $_POST['Races'];
+	$memberEmail = $_SESSION['user_name'];
 	
-	if (!StringHelper::AreNullOrEmpyt($name, $level, $class, $race))
+	if (!StringHelper::AreNullOrEmptyString($name, $level, $class, $race))
 	{
 		$characterRepository = new CharacterRepository();
-		$characterRepository->CreateNewCharacter($name, $level, $class, $race);
+		$characterRepository->CreateNewCharacter($memberEmail, $name, $level, $class, $race);
 		header("Location: ../Character/Select.php");
 	}
 
