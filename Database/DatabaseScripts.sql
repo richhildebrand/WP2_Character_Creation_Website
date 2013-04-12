@@ -32,3 +32,7 @@ CREATE TABLE classes
 DELETE FROM classes;
 DELETE FROM characters;
 DELETE FROM members;
+
+INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Paladin', 3, 2);
+INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Archer', 2, 3);
+INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Mage', 1, 4);
