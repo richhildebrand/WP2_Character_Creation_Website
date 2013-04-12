@@ -17,7 +17,7 @@ $userProfile = $memberRepository->GetUserProfile($userName);
 <html>
     <?php HeaderHelper::DrawHeader(); ?>
     <body>
-        <h1>Edit Profile for Paul's Pizza Palace</h1>
+        <h1>Edit Profile</h1>
         <h2 class="success"> <?php print($successResult); ?> </h2>
         <form method="post" >
             <h2 name="email">

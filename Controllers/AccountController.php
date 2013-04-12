@@ -56,8 +56,8 @@ elseif(isset($_POST['ForgotPassword']))
 }
 elseif(isset($_POST['UpdateProfile']))
 {
-   $databaseAccessor = new DatabaseAccessor();
-   if ($databaseAccessor->SetUserProfile( $_POST, $_SESSION['userName']))
+   $databaseAccessor = new MemberRepository();
+   if ($databaseAccessor->SetUserProfile( $_POST, $_SESSION['user_name']))
    {
         $successResult = "Your profile has been updated.";
    }
