@@ -29,6 +29,11 @@ CREATE TABLE classes
    PRIMARY KEY (name)
 )  ENGINE = INNODB;
 
+CREATE TABLE races
+(  name VARCHAR(35) NOT NULL,
+   PRIMARY KEY (name)
+)  ENGINE = INNODB;
+
 DELETE FROM classes;
 DELETE FROM characters;
 DELETE FROM members;
@@ -36,3 +41,7 @@ DELETE FROM members;
 INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Paladin', 3, 2);
 INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Archer', 2, 3);
 INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Mage', 1, 4);
+
+INSERT INTO races (name) VALUES ('Toblakai');
+INSERT INTO races (name) VALUES ('Forkrul Assail');
+INSERT INTO races (name) VALUES ('Jaghut');
