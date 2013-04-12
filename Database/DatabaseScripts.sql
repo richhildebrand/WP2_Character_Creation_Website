@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS characters, members;
+DROP TABLE IF EXISTS classes, characters, members;
      
 CREATE TABLE members
 (  id INT(10) NOT NULL AUTO_INCREMENT, 
@@ -22,5 +22,13 @@ CREATE TABLE characters
    FOREIGN KEY (member_id) REFERENCES members (id)
 )  ENGINE = INNODB;
 
+CREATE TABLE classes
+(  name VARCHAR(35) NOT NULL,
+   hp_dice_count INT(10) NOT NULL,
+   skill_points INT(10) NOT NULL,
+   PRIMARY KEY (name)
+)  ENGINE = INNODB;
+
+DELETE FROM classes;
 DELETE FROM characters;
 DELETE FROM members;
