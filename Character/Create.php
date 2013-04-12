@@ -5,8 +5,6 @@ include_once("../Session/SessionManager.php");
 $sessionManager = new SessionManager();
 $sessionManager->InSession();
 
-require_once("../Controllers/CharacterController.php");
-
 $character = new Character();
 
 ?>
