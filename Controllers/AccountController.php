@@ -1,5 +1,5 @@
 <?php
-include_once("../Logic/AccountManager.php");
+include_once("../AccountLogic/AccountManager.php");
 
 $errorResult = "";
 $successResult = "";
