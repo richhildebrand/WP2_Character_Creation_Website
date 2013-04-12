@@ -1,11 +1,12 @@
 <?php
 include_once("../Helpers/HeaderHelper.php");
 include_once("../Helpers/FooterHelper.php");
+include_once("../Templates/ListTemplates.php");
 include_once("../Session/SessionManager.php");
 $sessionManager = new SessionManager();
 $sessionManager->InSession();
 
-$character = new Character();
+$listTemplates = new ListTemplates();
 
 ?>
 <!DOCTYPE html>
@@ -13,24 +14,14 @@ $character = new Character();
     <?php HeaderHelper::DrawHeader(); ?>
     <body>
         <h1>Create Character</h1>
-        <h2 class="success"> <?php print($successResult); ?> </h2>
         <form method="post" >
-            <h2 name="email">
-                <?php print($userProfile->GetEmail());?>
-            </h2>
-
-            <label >Enter your firstname</label>
-            <input type="text" name="firstname"
-            value = <?php print('"' . $userProfile->GetFirstName() . '"'); ?>
-             />
-
-            <label >Enter your lastname</label>
-            <input type="text" name="lastname"
-            value = <?php print('"' . $userProfile->GetLastName() . '"'); ?>
-             />
-            
-            <button name="UpdateProfile">Update Profile</button>
+            <?php $listTemplates->ListClasses(); ?>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
         <script type="text/javascript" src="../Frontend/Scripts/confirmPasswordsMatch.js"></script>
     </body>
+</html>
+
+
+
+
