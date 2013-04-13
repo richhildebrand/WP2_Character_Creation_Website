@@ -34,12 +34,12 @@ CREATE TABLE races
 )  ENGINE = INNODB;
 
 CREATE TABLE stats
-(  character_Id INT(10) NOT NULL,
+(  character_id INT(10) NOT NULL,
    strength INT(10) NOT NULL,
    wisdom INT(10) NOT NULL,
    charisma INT(10) NOT NULL,
-   PRIMARY KEY (character_Id),
-   FOREIGN KEY (character_Id) REFERENCES characters (id)
+   PRIMARY KEY (character_id),
+   FOREIGN KEY (character_id) REFERENCES characters (id)
 )  ENGINE = INNODB;
 
 DELETE FROM stats;
