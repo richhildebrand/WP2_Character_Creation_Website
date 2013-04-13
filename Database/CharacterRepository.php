@@ -20,10 +20,9 @@ class CharacterRepository
         return $preparedStatement->fetchAll();
     }
 
-    public function CreateNewCharacter($email, $name, $level, $class, $race)
+    public function CreateNewCharacter($email, $name, $level, $class, $race, $alignment)
     {
-    	//currently these value are not in use during char creation
-    	$alignment = 'dark';
+        // xp is probably calculated from level
     	$xp = 0;
 
 

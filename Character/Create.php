@@ -26,7 +26,10 @@ $raceTemplateGenerator = new  RaceTemplateGenerator();
             <?php $classTemplateGenerator->ListClasses(); ?>
 
             <label> Race: </label>
-            <?php $raceTemplateGenerator->ListRaces(); ?>            
+            <?php $raceTemplateGenerator->ListRaces(); ?>   
+
+            <label>Alignment: </label>
+            <input name="Alignment" type="text" />         
 
             <label>Starting Level: </label>
             <input name="StartingLevel" type="Number" />
