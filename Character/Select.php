@@ -16,7 +16,7 @@ $characterTemplateGenerator = new  CharacterTemplateGenerator();
 <html>
     <?php HeaderHelper::DrawHeader(); ?>
     <body>
-        <h1>Create Character</h1>
+        <h1>Select Character</h1>
         <form method="post" >      
             <label>Choose a Character:</label>
             <?php $characterTemplateGenerator->ListMemeberCharacters($member); ?>
