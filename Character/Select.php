@@ -22,7 +22,6 @@ $characterTemplateGenerator = new  CharacterTemplateGenerator();
             <?php $characterTemplateGenerator->ListMemeberCharacters($member); ?>
 
             <button name="UseCharacter">Use Character</button>
-            <button name="ViewCharacter">View Character</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
         <script type="text/javascript" src="../Frontend/Scripts/confirmPasswordsMatch.js"></script>

@@ -39,11 +39,11 @@ public function RadioListCharacter($character)
 	<div>
 		<input name="Character" value="$id" type="radio"/>
 		<span> $name </span>
+		<span> is a level </span>
+		<span> $level </span>
+		<span> $alignment </span>
 		<span> $race </span>
 		<span> $class </span>
-		<span> $level </span>
-		<span> $xp </span>
-		<span> $alignment </span>
 	<div>
 EOF;
 }
