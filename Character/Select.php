@@ -24,6 +24,5 @@ $characterTemplateGenerator = new  CharacterTemplateGenerator();
             <button name="UseCharacter">Use Character</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
-        <script type="text/javascript" src="../Frontend/Scripts/confirmPasswordsMatch.js"></script>
     </body>
 </html>

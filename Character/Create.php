@@ -34,7 +34,6 @@ $raceTemplateGenerator = new  RaceTemplateGenerator();
             <button name="CreateNewCharacter">Create This Character</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
-        <script type="text/javascript" src="../Frontend/Scripts/confirmPasswordsMatch.js"></script>
     </body>
 </html>
 
