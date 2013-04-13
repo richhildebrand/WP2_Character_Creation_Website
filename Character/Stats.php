@@ -1,5 +1,5 @@
 <?php
-include_once("../Models/CharacterPreStatsDto.php");
+include_once("../Models/Character.php");
 include_once("../Helpers/HeaderHelper.php");
 include_once("../Helpers/FooterHelper.php");
 include_once("../Templates/StatTemplateGenerator.php");
@@ -11,6 +11,8 @@ require_once("../Controllers/CharacterController.php");
 
 $statTemplateGenerator = new StatTemplateGenerator();
 
+$character = $_SESSION['Character'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,9 +20,9 @@ $statTemplateGenerator = new StatTemplateGenerator();
     <body>
         <h1>Create Character</h1>
         <form method="post" >
-        	<?php $statTemplateGenerator->ListStatsTypes(); ?>
-
-            <button name="RollAllStats">Roll All Stats</button>
+        	<?php 
+        	echo $character->GetName();
+        	$statTemplateGenerator->ListCharacterStats($character->GetId()); ?>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
     </body>

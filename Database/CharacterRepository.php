@@ -20,6 +20,14 @@ class CharacterRepository
         return $preparedStatement->fetchAll();
     }
 
+    public function GetCharacter($id)
+    {
+        $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM characters WHERE id = :id');
+        $preparedStatement->execute(array(':id' => $id));
+        
+        return $preparedStatement->fetch();
+    }
+
     public function CreateNewCharacter($email, $name, $level, $class, $race, $alignment)
     {
         // xp is probably calculated from level
@@ -47,5 +55,7 @@ class CharacterRepository
         								  ':alignment' => $alignment,
         								  ':level' => $level,
         								  ':xp' => $xp));
+        
+        return $this->_dbConnection->lastInsertId();
     }
 }

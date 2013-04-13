@@ -1,5 +1,9 @@
 <?php
 include_once("../Models/CharacterPreStatsDto.php");
+include_once("../Models/Character.php");
+include_once("../Database/CharacterRepository.php");
+include_once("../Database/StatRepository.php");
+include_once("../StatLogic/StartingStatGenerator.php");
 include_once("../Helpers/StringHelper.php");
 
 if(isset($_POST['CreateNewCharacter']))
@@ -17,4 +21,25 @@ if(isset($_POST['CreateNewCharacter']))
 		header("Location: ../Character/GenerateStats.php");
 	}
 
+}
+elseif(isset($_POST['RollAllStats']))
+{
+	$startingStatGenerator = new StartingStatGenerator();
+	$characterStats = $startingStatGenerator->GererateStartingStats();
+	$character = $_SESSION['CharacterPreStatsDto'];
+	$member = $_SESSION['user_name'];
+
+	$characterRepository = new CharacterRepository();
+	$statRepository = new StatRepository();
+
+	$characterId = $characterRepository->CreateNewCharacter($member,
+															$character->GetName(), $character->GetLevel(),
+											   		   		$character->GetClass(), $character->GetRace(),
+							   				  		   		$character->GetAlignment());
+	$statRepository->SaveCharacterStats($characterId, $characterStats);
+	//SetCharacter as Sesson
+	$_SESSION['Character'] = new Character($characterRepository->GetCharacter($characterId),
+										   $statRepository->GetCharacterStats($characterId));
+	//Unset $_SESSION['CharacterPreStatsDto']
+	header("Location: ../Character/Stats.php");
 }
