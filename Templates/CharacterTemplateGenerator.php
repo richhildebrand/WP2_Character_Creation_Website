@@ -1,5 +1,4 @@
 <?php
-include_once("../Templates/ListItemTemplateGenerator.php");
 include_once("../Database/CharacterRepository.php");
 include_once("../Models/Character.php");
 

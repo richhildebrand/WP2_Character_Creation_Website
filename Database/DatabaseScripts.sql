@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS races, classes, characters, members;
+DROP TABLE IF EXISTS stats, races, classes, characters, members;
      
 CREATE TABLE members
 (  email VARCHAR(35) NOT NULL,
@@ -33,6 +33,16 @@ CREATE TABLE races
    PRIMARY KEY (name)
 )  ENGINE = INNODB;
 
+CREATE TABLE stats
+(  character_Id INT(10) NOT NULL,
+   strength INT(10) NOT NULL,
+   wisdom INT(10) NOT NULL,
+   charisma INT(10) NOT NULL,
+   PRIMARY KEY (character_Id),
+   FOREIGN KEY (character_Id) REFERENCES characters (id)
+)  ENGINE = INNODB;
+
+DELETE FROM stats;
 DELETE FROM races;
 DELETE FROM classes;
 DELETE FROM characters;
