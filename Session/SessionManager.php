@@ -28,7 +28,7 @@ class SessionManager
 		session_start();
         $_SESSION['user_name'] = $userName;
 
-        header("Location: ../Character/Create.php");
+        header("Location: ../Character/Select.php");
 	}
 
 	public function ContinueSession()
