@@ -8,7 +8,7 @@ class CharacterPreStatsDto
 	private $_level;
 	private $_alignment;
 
-	public function __construct($name, $level, $class, $race, $alignment, xp)
+	public function __construct($name, $level, $class, $race, $alignment, $xp)
 	{
 		$this->_name = $name;
 		$this->_race = $race;
