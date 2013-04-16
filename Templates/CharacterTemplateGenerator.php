@@ -48,7 +48,7 @@ public function ListCharacter($character, $inputType = null)
 		<span> $level </span>
 		<span> $alignment </span>
 		<span> $race </span>
-		<span>  </span>
+		<span> $class </span>
 	<div>
 EOF;
 

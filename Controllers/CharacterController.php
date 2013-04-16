@@ -7,6 +7,8 @@ include_once("../Database/StatRepository.php");
 include_once("../StatLogic/StartingStatGenerator.php");
 include_once("../Helpers/StringHelper.php");
 
+$characterFactory = new CharacterFactory();
+
 if(isset($_POST['CreateNewCharacter']))
 {
 	$name = $_POST['CharacterName'];
@@ -30,9 +32,15 @@ elseif(isset($_POST['RollAllStats']))
 	$member = $_SESSION['user_name'];
 	$characterPreStatsDto = $_SESSION['CharacterPreStatsDto'];
 
-	$characterFactory = new CharacterFactory();
 	$_SESSION['Character']  = $characterFactory->CreateNewCharacterInDatabase($member, $characterPreStatsDto);
-	
+
 	unset($_SESSION['CharacterPreStatsDto']);
 	header("Location: ../Character/Stats.php");
+}
+elseif(isset($_POST['SelectCharacter']))
+{
+	$characterId = $_POST['Character'];
+	$_SESSION['Character'] = $characterFactory->GetCharacterFromDatabase($characterId); 
+
+	header("Location: ../Character/Sheet.php");
 }
