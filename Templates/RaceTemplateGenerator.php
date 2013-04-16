@@ -16,10 +16,12 @@ class RaceTemplateGenerator
 	public function ListRaces()
 	{
 		$races = $this->_raceRepository->GetAllRaces();
-		foreach ($races as $race)
+		foreach ($races as $raceDetails)
 		{
-			echo $this->_listItemTemplateGenerator->RadioTemplate('Races', $race['race'],
-																  $race['race'], $race['url'] '');	
+			$race = $raceDetails['race'];
+			$url = $raceDetails['url'];
+			echo $this->_listItemTemplateGenerator->RadioTemplate('Races', $race,
+														  		   $race, $url, '');	
 		}
 		
 	}
