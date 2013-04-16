@@ -24,11 +24,9 @@ class StatTemplateGenerator
 		
 	}
 
-	public function ListCharacterStats($characterId)
+	public function ListCharacterStats($characterStats)
 	{
-
-		$stats = $this->_statRepository->GetCharacterStats($characterId);
-		foreach ($stats as $stat)
+		foreach ($characterStats as $stat)
 		{
 			$statname = $stat->GetStat();
 			$value = $stat->GetValue();

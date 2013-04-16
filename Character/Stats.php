@@ -22,7 +22,7 @@ $character = $_SESSION['Character'];
         <form method="post" >
         	<?php 
         	echo $character->GetName();
-        	$statTemplateGenerator->ListCharacterStats($character->GetId()); ?>
+        	$statTemplateGenerator->ListCharacterStats($character->GetStats()); ?>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
     </body>
