@@ -17,7 +17,7 @@ class StartingStatGenerator
 
 		foreach ($stats as $stat)
 		{
-			$statValue = 3;
+			$statValue = 3; //TODO: Use StatCalculator
 			$newStat = new Stat($stat->GetStat(), $statValue);
 			array_push($characterStats, $newStat);
 		}

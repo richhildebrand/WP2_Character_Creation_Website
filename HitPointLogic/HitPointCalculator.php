@@ -11,7 +11,7 @@ class HitPointCalculator
 		$class = $classRepository->GetClass($className);
 		
 		$hitPointDiceCount = $class->GetHpDice();
-		$totalHitPoints = $hitPointDiceCount; //should be calculated by DiceRoller;
+		$totalHitPoints = $hitPointDiceCount; // TODO: use DiceRoller;
 		
 		$hitPoints = new HitPoints($totalHitPoints, $totalHitPoints);
 		return $hitPoints;
