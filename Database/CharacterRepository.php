@@ -19,7 +19,7 @@ class CharacterRepository
         $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM characters WHERE email = :email');
         $preparedStatement->execute(array(':email' => $email));
         
-        return $preparedStatement->fetchAll();
+        return $preparedStatement->fetchAll(PDO::FETCH_CLASS, "Character");
     }
 
     public function GetCharacter($id)

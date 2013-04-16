@@ -15,28 +15,34 @@ class CharacterTemplateGenerator
 	public function ListMemeberCharacters($member)
 	{
 		$characters = $this->_characterRepository->GetMemberCharacters($member);
+		
 		foreach ($characters as $character)
 		{
 			echo $this->RadioListCharacter($character);
 		}
 	}
 
-//unindented because EOF cannot of proceeding whitespace... lolphp
-public function RadioListCharacter($character)
-{
+	public function RadioListCharacter($character)
+	{
+		$id = $character->GetId();
+		$inputType = '<input name="Character" value="' . $id . '" type="radio"/>';
+		return $this->ListCharacter($character, $inputType);
+	}
 
+public function ListCharacter($character, $inputType)
+{
 	//function calls and dictionary lookups are not allowed inside EOF... lolphp
-	$id = $character['id'];
-	$xp = $character['xp'];
-	$name = $character['name'];
-	$race = $character['race'];
-	$class = $character['class'];
-	$level = $character['level'];
-	$alignment = $character['alignment'];
+	$id = $character->GetId();
+	$xp = $character->GetXp();
+	$name = $character->GetName();
+	$race = $character->GetRace();
+	$class = $character->GetClass();
+	$level = $character->GetLevel();
+	$alignment = $character->GetAlignment();
 
    return <<<EOF
 	<div>
-		<input name="Character" value="$id" type="radio"/>
+		$inputType
 		<span> $name </span>
 		<span> is a level </span>
 		<span> $level </span>
@@ -45,6 +51,10 @@ public function RadioListCharacter($character)
 		<span> $class </span>
 	<div>
 EOF;
+
 }
+
+
+
 
 }
