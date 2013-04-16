@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS stats, races, classes, characters, members;
+DROP TABLE IF EXISTS characters_stats, stats_definitions, characters;
+DROP TABLE IF EXISTS races, classes, members;
      
 CREATE TABLE members
 (  email VARCHAR(35) NOT NULL,
@@ -8,50 +9,55 @@ CREATE TABLE members
    PRIMARY KEY (email)
 )  ENGINE = INNODB;
 
-CREATE TABLE characters
-(  id INT(10) NOT NULL AUTO_INCREMENT, 
-   email VARCHAR(35) NOT NULL,
-   name VARCHAR(35) NOT NULL,
-   class VARCHAR(250) NOT NULL,
-   race VARCHAR(250) NOT NULL,
-   alignment VARCHAR(250) NOT NULL,   
-   level INT(10) NOT NULL,
-   xp INT(10) NOT NULL,
-   PRIMARY KEY (id),
-   FOREIGN KEY (email) REFERENCES members (email)
-)  ENGINE = INNODB;
-
 CREATE TABLE classes
-(  name VARCHAR(35) NOT NULL,
+(  class VARCHAR(35) NOT NULL,
    hp_dice_count INT(10) NOT NULL,
    skill_points INT(10) NOT NULL,
-   PRIMARY KEY (name)
+   PRIMARY KEY (class)
 )  ENGINE = INNODB;
 
 CREATE TABLE races
-(  name VARCHAR(35) NOT NULL,
-   PRIMARY KEY (name)
+(  race VARCHAR(35) NOT NULL,
+   PRIMARY KEY (race)
 )  ENGINE = INNODB;
 
-CREATE TABLE stats
+CREATE TABLE stats_definitions
+(  stat VARCHAR(35) NOT NULL,
+   PRIMARY KEY (stat)
+)  ENGINE = INNODB;
+
+CREATE TABLE characters
+(  id INT(10) NOT NULL AUTO_INCREMENT, 
+   email VARCHAR(35) NOT NULL,
+   NAME VARCHAR(35) NOT NULL,
+   class VARCHAR(250) NOT NULL,
+   race VARCHAR(250) NOT NULL,
+   alignment VARCHAR(250) NOT NULL,   
+   LEVEL INT(10) NOT NULL,
+   xp INT(10) NOT NULL,
+   PRIMARY KEY (id),
+   FOREIGN KEY (email) REFERENCES members (email),
+   FOREIGN KEY (class) REFERENCES classes (class),
+   FOREIGN KEY (race) REFERENCES races (race)
+)  ENGINE = INNODB;
+
+CREATE TABLE characters_stats
 (  character_id INT(10) NOT NULL,
-   strength INT(10) NOT NULL,
-   wisdom INT(10) NOT NULL,
-   charisma INT(10) NOT NULL,
+   stat VARCHAR(35) NOT NULL,
+   VALUE INT(10) NOT NULL,
    PRIMARY KEY (character_id),
-   FOREIGN KEY (character_id) REFERENCES characters (id)
+   FOREIGN KEY (character_id) REFERENCES characters (id),
+   FOREIGN KEY (stat) REFERENCES stats_definitions (stat)
 )  ENGINE = INNODB;
 
-DELETE FROM stats;
-DELETE FROM races;
-DELETE FROM classes;
-DELETE FROM characters;
-DELETE FROM members;
+INSERT INTO classes (class, hp_dice_count, skill_points) VALUES ('Paladin', 3, 2);
+INSERT INTO classes (class, hp_dice_count, skill_points) VALUES ('Archer', 2, 3);
+INSERT INTO classes (class, hp_dice_count, skill_points) VALUES ('Mage', 1, 4);
 
-INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Paladin', 3, 2);
-INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Archer', 2, 3);
-INSERT INTO classes (name, hp_dice_count, skill_points) VALUES ('Mage', 1, 4);
+INSERT INTO races (race) VALUES ('Toblakai');
+INSERT INTO races (race) VALUES ('Forkrul Assail');
+INSERT INTO races (race) VALUES ('Jaghut');
 
-INSERT INTO races (name) VALUES ('Toblakai');
-INSERT INTO races (name) VALUES ('Forkrul Assail');
-INSERT INTO races (name) VALUES ('Jaghut');
+INSERT INTO stats_definitions (stat) VALUES ('Strength');
+INSERT INTO stats_definitions (stat) VALUES ('Dexterity');
+INSERT INTO stats_definitions (stat) VALUES ('Constitution');
