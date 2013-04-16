@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS characters_stats, stats_definitions, characters;
-DROP TABLE IF EXISTS races, classes, members;
+DROP TABLE IF EXISTS characters_hp, characters_stats, stats_definitions;
+DROP TABLE IF EXISTS characters, races, classes, members;
      
 CREATE TABLE members
 (  email VARCHAR(35) NOT NULL,
@@ -51,6 +51,15 @@ CREATE TABLE characters_stats
    FOREIGN KEY (character_id) REFERENCES characters (id),
    FOREIGN KEY (stat) REFERENCES stats_definitions (stat)
 )  ENGINE = INNODB;
+
+CREATE TABLE characters_hp
+(  character_id INT(10) NOT NULL,
+   max_hp INT(10) NOT NULL,
+   current_hp INT(10) NOT NULL,
+   PRIMARY KEY (character_id),
+   FOREIGN KEY (character_id) REFERENCES characters (id)
+)  ENGINE = INNODB;
+
 
 INSERT INTO classes (class, hp_dice_count, skill_points, url) 
    VALUES ('Paladin', 3, 2, 'http://www.d20srd.org/srd/classes/paladin.htm');
