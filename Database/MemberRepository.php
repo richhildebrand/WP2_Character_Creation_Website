@@ -1,6 +1,6 @@
 <?php
 include_once("../Models/MemberProfile.php");
-include_once("../DbConnectionFactory.php");
+include_once("../Factories/DbConnectionFactory.php");
 
 class MemberRepository
 {
