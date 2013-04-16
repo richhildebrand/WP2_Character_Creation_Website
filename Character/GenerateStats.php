@@ -18,7 +18,7 @@ $statTemplateGenerator = new StatTemplateGenerator();
     <body>
         <h1>Create Character</h1>
         <form method="post" >
-        	<?php $statTemplateGenerator->ListStatsTypes(); ?>
+        	<?php $statTemplateGenerator->ListStats(); ?>
 
             <button name="RollAllStats">Roll All Stats</button>
         </form>

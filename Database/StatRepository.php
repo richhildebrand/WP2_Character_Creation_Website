@@ -11,9 +11,9 @@ class StatRepository
         $this->_dbConnection = $dbFactory->CreateDbConnection();
     }
 
-    public function GetAllStatTypes()
+    public function GetAllStats()
     {
-        $preparedStatement = $this->_dbConnection->prepare('SELECT race FROM races');
+        $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM stats_definitions');
         $preparedStatement->execute();
         
         return $preparedStatement->fetchAll();

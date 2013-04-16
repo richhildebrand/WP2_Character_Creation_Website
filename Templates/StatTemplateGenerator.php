@@ -1,22 +1,27 @@
 <?php
+include_once("../Database/RaceRepository.php");
 include_once("../Database/StatRepository.php");
+include_once("../Templates/ListItemTemplateGenerator.php");
 
 class StatTemplateGenerator
 {
 	private $_statRepository;
+	private $_listItemTemplateGenerator;
 
 	public function __construct()
 	{
 		$this->_statRepository = new StatRepository();
+		$this->_listItemTemplateGenerator = new ListItemTemplateGenerator();
 	}
 
-	public function ListStatsTypes()
+	public function ListStats()
 	{
-		$stats = $this->_statRepository->GetAllStatTypes();
+		$stats = $this->_statRepository->GetAllStats();
 		foreach ($stats as $stat)
 		{
-			$this->ListStatType($stat);
+			echo $this->ListStatType($stat['stat']);
 		}
+		
 	}
 
 	public function ListCharacterStats($characterId)
