@@ -10,6 +10,7 @@ class Character
 	private $level;
 	private $alignment;
 	private $hitPoints;
+	private $stats;
 
 	public function GetId() { return $this->id; }
 	public function GetXp() { return $this->xp; }
@@ -26,4 +27,15 @@ class Character
 
 	public function GetHitPoints() { return $this->hitPoints; }
 	public function SetHitPoints($hitPoints) { $this->hitPoints = $hitPoints; }
+
+	public function GetStat($statToGet)
+	{
+		foreach ($this->stats as $stat) 
+		{
+			if ($stat-GetStat() == $statToGet)
+			{
+				return $stat;
+			}
+		}
+	}
 }
