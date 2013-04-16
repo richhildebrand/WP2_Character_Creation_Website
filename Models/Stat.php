@@ -2,8 +2,8 @@
 
 class Stat
 {
-	public $stat;
-	public $value;
+	private $stat;
+	private $value;
 
 	//must use default values to allow fetch_class
 	public function __construct($stat = null, $value = null)

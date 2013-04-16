@@ -2,6 +2,6 @@
 
 class StatDefinition
 {
-	public $stat;
+	private $stat;
 	public function GetStat() { return $this->stat; }
 }
