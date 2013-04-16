@@ -1,5 +1,5 @@
 <?php
-require_once('../Database/Database.php');
+include_once("../Factories/DbConnectionFactory.php");
 
 class StatRepository
 {
@@ -7,9 +7,8 @@ class StatRepository
 
     public function __construct()
     {
-        $this->_dbConnection = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-        $this->_dbConnection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        $this->_dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbFactory = new DbConnectionFactory();
+        $this->_dbConnection = $dbFactory->CreateDbConnection();
     }
 
     public function GetAllStatTypes()

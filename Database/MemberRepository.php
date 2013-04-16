@@ -1,6 +1,6 @@
 <?php
 include_once("../Models/MemberProfile.php");
-require_once("Database.php");
+include_once("../DbConnectionFactory.php");
 
 class MemberRepository
 {
@@ -8,9 +8,8 @@ class MemberRepository
 
     public function __construct()
     {
-        $this->_dbConnection = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-        $this->_dbConnection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        $this->_dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbFactory = new DbConnectionFactory();
+        $this->_dbConnection = $dbFactory->CreateDbConnection();
     }
 
     public function InsertNewUser($email, $password)
