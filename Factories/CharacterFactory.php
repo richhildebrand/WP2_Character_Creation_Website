@@ -35,13 +35,7 @@ class CharacterFactory
 		$startingStatGenerator = new StartingStatGenerator();
 		$characterStats = $startingStatGenerator->GererateStartingStats();
 
-		$characterId = $this->_characterRepository->CreateNewCharacter($member,
-																	   $characterPreStatsDto->GetName(), 
-																	   $characterPreStatsDto->GetLevel(),
-												   		   			   $characterPreStatsDto->GetClass(),
-												   		   			   $characterPreStatsDto->GetRace(),
-								   				  		   			   $characterPreStatsDto->GetAlignment());
-		$this->_statRepository->SaveCharacterStats($characterId, $characterStats);
+		$characterId = $this->_characterRepository->CreateNewCharacter($member, $characterPreStatsDto);
 
 		return $this->GetCharacterFromDatabase($characterId);
 	}

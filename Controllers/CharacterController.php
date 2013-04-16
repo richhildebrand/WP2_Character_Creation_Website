@@ -15,10 +15,11 @@ if(isset($_POST['CreateNewCharacter']))
 	$race = $_POST['Races'];
 	$alignment = $_POST['Alignment'];
 	$memberEmail = $_SESSION['user_name'];
+	$xp = 0; //Should be calculated from XpCalculator
 	
 	if (!StringHelper::AreNullOrEmptyString($name, $level, $class, $race, $alignment))
 	{
-		$_SESSION['CharacterPreStatsDto'] = new CharacterPreStatsDto($name, $level, $class, $race, $alignment);
+		$_SESSION['CharacterPreStatsDto'] = new CharacterPreStatsDto($name, $level, $class, $race, $alignment, $xp);
 		header("Location: ../Character/GenerateStats.php");
 	}
 

@@ -1,5 +1,6 @@
 <?php
 include_once('../Models/Character.php');
+include_once('../Models/CharacterPreStatsDto');
 include_once('../Factories/CharacterFactory.php');
 include_once('../Factories/DbConnectionFactory.php');
 
@@ -31,12 +32,8 @@ class CharacterRepository
         return $preparedStatement->fetch();
     }
 
-    public function CreateNewCharacter($email, $name, $level, $class, $race, $alignment)
+    public function CreateNewCharacter($email, $characterPreStatsDto)
     {
-        // xp is probably calculated from level
-    	$xp = 0;
-
-
         $preparedStatement = $this->_dbConnection->prepare('INSERT INTO characters(email, 
         																		   name,
     																		   	   class,
@@ -52,12 +49,12 @@ class CharacterRepository
                                                      		 	   :level,
                                                      		 	   :xp)');
         $preparedStatement->execute(array(':email' => $email,
-        								  ':name' => $name,
-        								  ':class' => $class,
-        								  ':race' => $race,
-        								  ':alignment' => $alignment,
-        								  ':level' => $level,
-        								  ':xp' => $xp));
+        								  ':name' => $characterPreStatsDto->GetName(),
+        								  ':class' => $characterPreStatsDto->GetClass(),
+        								  ':race' => $characterPreStatsDto->GetRace(),
+        								  ':alignment' => $characterPreStatsDto->GetAlignment(),
+        								  ':level' => $characterPreStatsDto->GetLevel(),
+        								  ':xp' => $characterPreStatsDto->GetXp()));
         
         return $this->_dbConnection->lastInsertId();
     }
