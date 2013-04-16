@@ -27,6 +27,8 @@ body {
   border: 2px solid white;
   padding: 1.5em;
   padding-top: 0;
+  background-image:url('oldpaper.jpg');
+  background-repeat:repeat-x;
 }
 
 .price:before {
