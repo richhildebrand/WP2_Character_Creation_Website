@@ -28,12 +28,11 @@ class StatTemplateGenerator
 	{
 
 		$stats = $this->_statRepository->GetCharacterStats($characterId);
-		foreach ($stats as $key => $value)
+		foreach ($stats as $stat)
 		{
-			//foreach ($stat as $key => $value) {
-				$this->ListCharacterStat($key, $value);
-			//}
-			//$this->ListStatType($stat);
+			$statname = $stat['stat'];
+			$value = $stat['value'];
+			$this->ListCharacterStat($statname, $value);
 		}
 	}
 
