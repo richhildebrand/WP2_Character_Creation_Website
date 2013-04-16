@@ -19,7 +19,7 @@ class RaceTemplateGenerator
 		foreach ($races as $race)
 		{
 			echo $this->_listItemTemplateGenerator->RadioTemplate('Races', $race['race'],
-																  $race['race'], '');	
+																  $race['race'], $race['url'] '');	
 		}
 		
 	}

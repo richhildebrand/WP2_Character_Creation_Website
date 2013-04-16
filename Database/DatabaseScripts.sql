@@ -19,6 +19,7 @@ CREATE TABLE classes
 
 CREATE TABLE races
 (  race VARCHAR(35) NOT NULL,
+   url VARCHAR(250),
    PRIMARY KEY (race)
 )  ENGINE = INNODB;
 
@@ -58,9 +59,12 @@ INSERT INTO classes (class, hp_dice_count, skill_points, url)
 INSERT INTO classes (class, hp_dice_count, skill_points, url) 
    VALUES ('Monk', 1, 4, 'http://www.d20srd.org/srd/classes/monk.htm');
 
-INSERT INTO races (race) VALUES ('Toblakai');
-INSERT INTO races (race) VALUES ('Forkrul Assail');
-INSERT INTO races (race) VALUES ('Jaghut');
+INSERT INTO races (race, url) 
+   VALUES ('Human', 'http://www.d20srd.org/srd/races.htm#humans');
+INSERT INTO races (race, url) 
+   VALUES ('Dwarf', 'http://www.d20srd.org/srd/races.htm#dwarves');
+INSERT INTO races (race, url) 
+   VALUES ('Elve', 'http://www.d20srd.org/srd/races.htm#elves');
 
 INSERT INTO stats_definitions (stat) VALUES ('Strength');
 INSERT INTO stats_definitions (stat) VALUES ('Dexterity');

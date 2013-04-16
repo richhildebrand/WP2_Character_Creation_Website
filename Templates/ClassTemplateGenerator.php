@@ -19,7 +19,7 @@ class ClassTemplateGenerator
 		foreach ($classes as $class)
 		{
 			echo $this->_listItemTemplateGenerator->RadioTemplate('Classes', $class['class'],
-																  $class['class'], '');	
+																  $class['class'], $class['url'], '');	
 		}
 		
 	}
