@@ -10,18 +10,6 @@ class Character
 	private $level;
 	private $alignment;
 
-	//must have defualt value to allow fetch_class
-	public function __construct($characterDetails = null)
-	{
-		$this->id = $characterDetails['id'];
-		$this->xp = $characterDetails['xp'];
-		$this->name = $characterDetails['name'];
-		$this->race = $characterDetails['race'];
-		$this->class = $characterDetails['class'];
-		$this->level = $characterDetails['level'];
-		$this->alignment = $characterDetails['alignment'];
-	}
-
 	public function GetId() { return $this->id; }
 	public function GetXp() { return $this->xp; }
 	public function GetName() { return $this->name; }
