@@ -17,8 +17,9 @@ class StartingStatGenerator
 
 		foreach ($stats as $stat)
 		{
-			$statName =$stat['stat'];
-			$characterStats[$statName] = 3; // should probably be random
+			$statValue = 3;
+			$newStat = new Stat($stat->GetStat(), $statValue);
+			array_push($characterStats, $newStat);
 		}
 
 		return $characterStats;

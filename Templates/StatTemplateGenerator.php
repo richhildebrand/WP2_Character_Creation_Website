@@ -19,7 +19,7 @@ class StatTemplateGenerator
 		$stats = $this->_statRepository->GetAllStats();
 		foreach ($stats as $stat)
 		{
-			echo $this->ListStatType($stat['stat']);
+			echo $this->ListStatType($stat->GetStat());
 		}
 		
 	}
@@ -30,8 +30,8 @@ class StatTemplateGenerator
 		$stats = $this->_statRepository->GetCharacterStats($characterId);
 		foreach ($stats as $stat)
 		{
-			$statname = $stat['stat'];
-			$value = $stat['value'];
+			$statname = $stat->GetStat();
+			$value = $stat->GetValue();
 			$this->ListCharacterStat($statname, $value);
 		}
 	}
