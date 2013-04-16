@@ -14,73 +14,34 @@ class StatRepository
 
     public function GetAllStatTypes()
     {
-    	$preparedStatement = $this->_dbConnection->prepare("DESCRIBE stats");
-		$preparedStatement->execute();
-
-        $columns = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
-
-        return $this->ExcludeCharacterId($columns);
+        $preparedStatement = $this->_dbConnection->prepare('SELECT race FROM races');
+        $preparedStatement->execute();
+        
+        return $preparedStatement->fetchAll();
     }
 
     public function GetCharacterStats($characterId)
     {
-        $preparedStatement = $this->_dbConnection->prepare("SELECT * FROM stats WHERE character_id = :characterId");
+        $preparedStatement = $this->_dbConnection->prepare("SELECT * FROM characters_stats WHERE character_id = :characterId");
         $preparedStatement->execute(array(':characterId' => $characterId));
 
-        //not sure why I am getting duplicates, but they need to be filtered
-        $nestedStats = $preparedStatement->fetchAll();
-        
-        $stats = array();
-        foreach ($nestedStats as $statsWithDuplicates) 
-        {
-            foreach ($statsWithDuplicates as $stat => $value)
-            {
-                if (!is_numeric($stat) && $stat != 'character_id')
-                {
-                    $stats[$stat] = $value;
-                }
-            }
-        }       
-
-        return $stats;
-        //return $this->ExcludeCharacterId($columns);
+        return $preparedStatement->fetchAll();
     }
 
     public function SaveCharacterStats($characterId, $characterStats)
     {
-        $this->InsertCharacterRow($characterId);
+       
         foreach ($characterStats as $statName => $statValue)
         {
             
-            $this->UpdateCharacterStat($characterId, $statName, $statValue);
+            $this->InsertCharacterRow($characterId, $statName, $statValue);
         }
     }
 
-    public function UpdateCharacterStat($characterId, $statName, $statValue)
+    private function InsertCharacterRow($id, $stat, $value)
     {
-            $preparedStatement = $this->_dbConnection->prepare('UPDATE stats 
-                                                                SET ' . $statName . ' = :statValue 
-                                                                WHERE character_id = :id');
-            $preparedStatement->execute(array(':id' => $characterId,':statValue' => $statValue));
-    }
-
-    private function InsertCharacterRow($id)
-    {
-        $preparedStatement = $this->_dbConnection->prepare('INSERT INTO stats(character_id)
-                                                            VALUES(:id)');
-        $preparedStatement->execute(array(':id' => $id));
-    }
-
-    private function ExcludeCharacterId($columns)
-    {
-        $stats = array();
-        foreach ($columns as $column)
-        {
-            if ($column != 'character_id') 
-            {
-                array_push($stats, $column);
-            }
-        }
-        return $stats;
+        $preparedStatement = $this->_dbConnection->prepare('INSERT INTO characters_stats(character_id, stat, value)
+                                                            VALUES(:id, :stat, :value)');
+        $preparedStatement->execute(array(':id' => $id, ':stat' => $stat, ':value' => $value));
     }
 }

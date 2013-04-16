@@ -18,8 +18,8 @@ class RaceTemplateGenerator
 		$races = $this->_raceRepository->GetAllRaces();
 		foreach ($races as $race)
 		{
-			echo $this->_listItemTemplateGenerator->RadioTemplate('Races', $race['name'],
-																  $race['name'], '');	
+			echo $this->_listItemTemplateGenerator->RadioTemplate('Races', $race['race'],
+																  $race['race'], '');	
 		}
 		
 	}

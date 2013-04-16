@@ -18,8 +18,8 @@ class ClassTemplateGenerator
 		$classes = $this->_classRepository->GetAllClasses();
 		foreach ($classes as $class)
 		{
-			echo $this->_listItemTemplateGenerator->RadioTemplate('Classes', $class['name'],
-																  $class['name'], '');	
+			echo $this->_listItemTemplateGenerator->RadioTemplate('Classes', $class['class'],
+																  $class['class'], '');	
 		}
 		
 	}
