@@ -20,4 +20,14 @@ class HitPointRepository
         								  ':max' => $characterHitPoints->GetMaxHitPoints(),
     								  	  ':current' => $characterHitPoints->GetCurrentHitPoints()));
     }
+
+    public function GetCharacterHitPoints($character_id)
+    {
+        $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM characters_hp WHERE character_id = :character_id');
+        $preparedStatement->execute(array(':character_id' => $character_id));
+        
+        $preparedStatement->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "HitPoints");
+
+        return $preparedStatement->fetch();
+    }
 }

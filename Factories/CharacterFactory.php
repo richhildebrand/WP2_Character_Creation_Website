@@ -31,6 +31,10 @@ class CharacterFactory
 		$className = $character->GetClass();
 		$characterClass = $this->_classRepository->GetClass($className);
 		$character->SetClass($characterClass);
+
+		$characterHitPoints = $this->_hitPointRepository->GetCharacterHitPoints($characterId);
+		$character->SetHitPoints($characterHitPoints);
+
 		return $character;
 	}
 

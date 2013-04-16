@@ -22,3 +22,15 @@
 [16/Apr/2013:17:02:10] (GenerateStats) hp dice count = 2
 [16/Apr/2013:17:02:10] (GenerateStats) max = 2
 [16/Apr/2013:17:02:10] (GenerateStats) current = 2
+[16/Apr/2013:17:06:57] (GenerateStats) hp dice count = 3
+[16/Apr/2013:17:06:57] (GenerateStats) max = 3
+[16/Apr/2013:17:06:57] (GenerateStats) current = 3
+[16/Apr/2013:17:07:31] (GenerateStats) hp dice count = 3
+[16/Apr/2013:17:07:31] (GenerateStats) max = 3
+[16/Apr/2013:17:07:31] (GenerateStats) current = 3
+[16/Apr/2013:17:08:17] (GenerateStats) hp dice count = 3
+[16/Apr/2013:17:08:17] (GenerateStats) max = 3
+[16/Apr/2013:17:08:17] (GenerateStats) current = 3
+[16/Apr/2013:17:08:48] (GenerateStats) hp dice count = 3
+[16/Apr/2013:17:08:48] (GenerateStats) max = 3
+[16/Apr/2013:17:08:48] (GenerateStats) current = 3

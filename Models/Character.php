@@ -9,6 +9,7 @@ class Character
 	private $class;
 	private $level;
 	private $alignment;
+	private $hitPoints;
 
 	public function GetId() { return $this->id; }
 	public function GetXp() { return $this->xp; }
@@ -22,4 +23,7 @@ class Character
 
 	public function GetClass() { return $this->class; }
 	public function SetClass($class) { $this->class = $class; }
+
+	public function GetHitPoints() { return $this->hitPoints; }
+	public function SetHitPoints($hitPoints) { $this->hitPoints = $hitPoints; }
 }
