@@ -26,7 +26,7 @@ class CharacterRepository
         $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM characters WHERE id = :id');
         $preparedStatement->execute(array(':id' => $id));
         
-        $preparedStatement->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Character");
+        $preparedStatement->setFetchMode(PDO::FETCH_CLASS, "Character");
 
         return $preparedStatement->fetch();
     }

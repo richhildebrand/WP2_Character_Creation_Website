@@ -1,4 +1,5 @@
 <?php
+include_once("../Models/CharacterClass.php");
 include_once("../Factories/DbConnectionFactory.php");
 
 class ClassRepository
@@ -16,6 +17,16 @@ class ClassRepository
         $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM classes');
         $preparedStatement->execute();
         
-        return $preparedStatement->fetchAll();
+        return $preparedStatement->fetchAll(PDO::FETCH_CLASS, "CharacterClass");
+    }
+
+    public function GetClass($class)
+    {
+        $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM classes WHERE class = :class');
+        $preparedStatement->execute(array(':class' => $class));
+        
+        $preparedStatement->setFetchMode(PDO::FETCH_CLASS, "CharacterClass");
+
+        return $preparedStatement->fetch();
     }
 }

@@ -1,4 +1,5 @@
 <?php
+include_once("../Models/CharacterClass.php");
 include_once("../Templates/ListItemTemplateGenerator.php");
 include_once("../Database/ClassRepository.php");
 
@@ -16,10 +17,12 @@ class ClassTemplateGenerator
 	public function ListClasses()
 	{
 		$classes = $this->_classRepository->GetAllClasses();
-		foreach ($classes as $class)
+		foreach ($classes as $classDetails)
 		{
-			echo $this->_listItemTemplateGenerator->RadioTemplate('Classes', $class['class'],
-																  $class['class'], $class['url'], '');	
+			$class = $classDetails->GetClass();
+			$url = $classDetails->GetUrl();
+			echo $this->_listItemTemplateGenerator->RadioTemplate('Classes', $class,
+																  $class, $url, '');	
 		}
 		
 	}
