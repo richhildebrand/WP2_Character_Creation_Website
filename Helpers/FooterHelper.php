@@ -7,6 +7,7 @@ class FooterHelper
 		print('<footer>');
 			print('<a href="../Character/Create.php">Create New Character</a>');
 			print('<a href="../Character/Select.php">Select Character</a>');
+			print('<a href="../Character/Sheet.php">View Character Sheet</a>');
 	        
 	        print('<div class="adminFooterLinks">');
 	        	print('<a href="../index.html">Home</a>');

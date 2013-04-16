@@ -29,14 +29,14 @@ class CharacterTemplateGenerator
 		return $this->ListCharacter($character, $inputType);
 	}
 
-public function ListCharacter($character, $inputType)
+public function ListCharacter($character, $inputType = null)
 {
 	//function calls and dictionary lookups are not allowed inside EOF... lolphp
 	$id = $character->GetId();
 	$xp = $character->GetXp();
 	$name = $character->GetName();
 	$race = $character->GetRace();
-	$class = $character->GetClass();
+	$class = $character->GetClass()->GetClass();
 	$level = $character->GetLevel();
 	$alignment = $character->GetAlignment();
 
