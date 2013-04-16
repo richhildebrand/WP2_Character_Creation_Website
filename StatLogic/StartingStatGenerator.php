@@ -12,7 +12,7 @@ class StartingStatGenerator
 
 	public function GererateStartingStats()
 	{
-		$stats = $this->_statRepository->GetAllStatTypes();
+		$stats = $this->_statRepository->GetAllStats();
 		$characterStats = array();
 
 		foreach ($stats as $stat)

@@ -37,9 +37,9 @@ elseif(isset($_POST['RollAllStats']))
 											   		   		$character->GetClass(), $character->GetRace(),
 							   				  		   		$character->GetAlignment());
 	$statRepository->SaveCharacterStats($characterId, $characterStats);
-	//SetCharacter as Sesson
+	
 	$_SESSION['Character'] = new Character($characterRepository->GetCharacter($characterId),
 										   $statRepository->GetCharacterStats($characterId));
-	//Unset $_SESSION['CharacterPreStatsDto']
+	unset($_SESSION['CharacterPreStatsDto']);
 	header("Location: ../Character/Stats.php");
 }

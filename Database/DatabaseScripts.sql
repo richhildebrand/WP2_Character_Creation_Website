@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS races, classes, members;
      
 CREATE TABLE members
 (  email VARCHAR(35) NOT NULL,
-   PASSWORD VARCHAR(250),
+   password VARCHAR(250),
    firstname VARCHAR(15),
    lastname VARCHAR(25),   
    PRIMARY KEY (email)
@@ -29,11 +29,11 @@ CREATE TABLE stats_definitions
 CREATE TABLE characters
 (  id INT(10) NOT NULL AUTO_INCREMENT, 
    email VARCHAR(35) NOT NULL,
-   NAME VARCHAR(35) NOT NULL,
+   name VARCHAR(35) NOT NULL,
    class VARCHAR(250) NOT NULL,
    race VARCHAR(250) NOT NULL,
    alignment VARCHAR(250) NOT NULL,   
-   LEVEL INT(10) NOT NULL,
+   level INT(10) NOT NULL,
    xp INT(10) NOT NULL,
    PRIMARY KEY (id),
    FOREIGN KEY (email) REFERENCES members (email),
@@ -44,7 +44,7 @@ CREATE TABLE characters
 CREATE TABLE characters_stats
 (  character_id INT(10) NOT NULL,
    stat VARCHAR(35) NOT NULL,
-   VALUE INT(10) NOT NULL,
+   value INT(10) NOT NULL,
    PRIMARY KEY (character_id),
    FOREIGN KEY (character_id) REFERENCES characters (id),
    FOREIGN KEY (stat) REFERENCES stats_definitions (stat)
