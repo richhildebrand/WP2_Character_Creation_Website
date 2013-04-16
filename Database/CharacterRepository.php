@@ -1,7 +1,6 @@
 <?php
 include_once('../Models/Character.php');
 include_once('../Models/CharacterPreStatsDto.php');
-include_once('../Factories/CharacterFactory.php');
 include_once('../Factories/DbConnectionFactory.php');
 
 class CharacterRepository

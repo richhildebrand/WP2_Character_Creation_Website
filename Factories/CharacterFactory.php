@@ -24,16 +24,7 @@ class CharacterFactory
 	public function GetCharacterFromDatabase($characterId)
 	{
 		$character = $this->_characterRepository->GetCharacter($characterId);
-
-		$characterStats = $this->_statRepository->GetCharacterStats($characterId);
-		$character->SetStats($characterStats);
-
-		$className = $character->GetClass();
-		$characterClass = $this->_classRepository->GetClass($className);
-		$character->SetClass($characterClass);
-
-		$characterHitPoints = $this->_hitPointRepository->GetCharacterHitPoints($characterId);
-		$character->SetHitPoints($characterHitPoints);
+		$this->LoadAllCharacterDetails($character);
 
 		return $character;
 	}
@@ -51,5 +42,41 @@ class CharacterFactory
 		$this->_hitPointRepository->SaveCharacterHitPoints($characterId, $characterHitPoints);
 
 		return $this->GetCharacterFromDatabase($characterId);
+	}
+
+	public function GetMemberCharactersFromDatabase($memberId)
+	{
+		$memberCharacters = $this->_characterRepository->GetMemberCharacters($memberId);
+		foreach ($memberCharacters as $character)
+		{
+			$this->LoadAllCharacterDetails($character);
+		}
+		return $memberCharacters;
+	}
+
+	private function LoadAllCharacterDetails($character)
+	{
+		$this->LoadCharacterStats($character);
+		$this->LoadCharacterClass($character);
+		$this->LoadCharacterHitPoints($character);	
+	}
+
+	private function LoadCharacterStats($character)
+	{
+		$characterStats = $this->_statRepository->GetCharacterStats($character->GetId());
+		$character->SetStats($characterStats);
+	}
+
+	private function LoadCharacterHitPoints($character)
+	{
+		$characterHitPoints = $this->_hitPointRepository->GetCharacterHitPoints($character->GetId());
+		$character->SetHitPoints($characterHitPoints);
+	}
+
+	private function LoadCharacterClass($character)
+	{
+		$className = $character->GetClass(); //class is not yet an object
+		$characterClass = $this->_classRepository->GetClass($className);
+		$character->SetClass($characterClass);
 	}
 }

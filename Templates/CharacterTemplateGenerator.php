@@ -1,20 +1,20 @@
 <?php
-include_once("../Database/CharacterRepository.php");
+include_once("../Factories/CharacterFactory.php");
 include_once("../Models/Character.php");
 
 class CharacterTemplateGenerator 
 {
-	private $_characterRepository;
+	private $_characterFactory;
 
 	public function __construct()
 	{
-		$this->_characterRepository = new CharacterRepository();
+		$this->_characterFactory = new CharacterFactory();
 	}
 
 
 	public function ListMemeberCharacters($member)
 	{
-		$characters = $this->_characterRepository->GetMemberCharacters($member);
+		$characters = $this->_characterFactory->GetMemberCharactersFromDatabase($member);
 		
 		foreach ($characters as $character)
 		{
@@ -48,7 +48,7 @@ public function ListCharacter($character, $inputType = null)
 		<span> $level </span>
 		<span> $alignment </span>
 		<span> $race </span>
-		<span> $class </span>
+		<span>  </span>
 	<div>
 EOF;
 
