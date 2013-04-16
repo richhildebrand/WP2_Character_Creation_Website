@@ -45,7 +45,7 @@ CREATE TABLE characters_stats
 (  character_id INT(10) NOT NULL,
    stat VARCHAR(35) NOT NULL,
    value INT(10) NOT NULL,
-   PRIMARY KEY (character_id),
+   PRIMARY KEY (character_id, stat),
    FOREIGN KEY (character_id) REFERENCES characters (id),
    FOREIGN KEY (stat) REFERENCES stats_definitions (stat)
 )  ENGINE = INNODB;
