@@ -13,6 +13,7 @@ CREATE TABLE classes
 (  class VARCHAR(35) NOT NULL,
    hp_dice_count INT(10) NOT NULL,
    skill_points INT(10) NOT NULL,
+   url VARCHAR(250),
    PRIMARY KEY (class)
 )  ENGINE = INNODB;
 
@@ -50,9 +51,12 @@ CREATE TABLE characters_stats
    FOREIGN KEY (stat) REFERENCES stats_definitions (stat)
 )  ENGINE = INNODB;
 
-INSERT INTO classes (class, hp_dice_count, skill_points) VALUES ('Paladin', 3, 2);
-INSERT INTO classes (class, hp_dice_count, skill_points) VALUES ('Archer', 2, 3);
-INSERT INTO classes (class, hp_dice_count, skill_points) VALUES ('Mage', 1, 4);
+INSERT INTO classes (class, hp_dice_count, skill_points, url) 
+   VALUES ('Paladin', 3, 2, 'http://www.d20srd.org/srd/classes/paladin.htm');
+INSERT INTO classes (class, hp_dice_count, skill_points, url) 
+   VALUES ('Ranger', 2, 3, 'http://www.d20srd.org/srd/classes/ranger.htm');
+INSERT INTO classes (class, hp_dice_count, skill_points, url) 
+   VALUES ('Monk', 1, 4, 'http://www.d20srd.org/srd/classes/monk.htm');
 
 INSERT INTO races (race) VALUES ('Toblakai');
 INSERT INTO races (race) VALUES ('Forkrul Assail');
