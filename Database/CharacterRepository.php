@@ -1,4 +1,6 @@
 <?php
+include_once('../Models/Character.php');
+include_once('../Factories/CharacterFactory.php');
 include_once('../Factories/DbConnectionFactory.php');
 
 class CharacterRepository
@@ -24,6 +26,8 @@ class CharacterRepository
         $preparedStatement = $this->_dbConnection->prepare('SELECT * FROM characters WHERE id = :id');
         $preparedStatement->execute(array(':id' => $id));
         
+        $preparedStatement->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "Character");
+
         return $preparedStatement->fetch();
     }
 

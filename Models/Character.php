@@ -2,31 +2,34 @@
 
 class Character
 {
-	private $_id;
-	private $_xp;
-	private $_name;
-	private $_race;
-	private $_class;
-	private $_level;
-	private $_alignment;
+	private $id;
+	private $xp;
+	private $name;
+	private $race;
+	private $class;
+	private $level;
+	private $alignment;
 
-	public function __construct($characterDetails)
+	//must have defualt value to allow fetch_class
+	public function __construct($characterDetails = null)
 	{
-		$this->_id = $characterDetails['id'];
-		$this->_xp = $characterDetails['xp'];
-		$this->_name = $characterDetails['name'];
-		$this->_race = $characterDetails['race'];
-		$this->_class = $characterDetails['class'];
-		$this->_level = $characterDetails['level'];
-		$this->_alignment = $characterDetails['alignment'];
-		
+		$this->id = $characterDetails['id'];
+		$this->xp = $characterDetails['xp'];
+		$this->name = $characterDetails['name'];
+		$this->race = $characterDetails['race'];
+		$this->class = $characterDetails['class'];
+		$this->level = $characterDetails['level'];
+		$this->alignment = $characterDetails['alignment'];
 	}
 
-	public function GetId() { return $this->_id; }
-	public function GetXp() { return $this->_xp; }
-	public function GetName() { return $this->_name; }
-	public function GetRace() { return $this->_race; }
-	public function GetClass() { return $this->_class; }
-	public function GetLevel() { return $this->_level; }
-	public function GetAlignment() { return $this->_alignment; }
+	public function GetId() { return $this->id; }
+	public function GetXp() { return $this->xp; }
+	public function GetName() { return $this->name; }
+	public function GetRace() { return $this->race; }
+	public function GetClass() { return $this->class; }
+	public function GetLevel() { return $this->level; }
+	public function GetAlignment() { return $this->alignment; }
+
+	public function GetStats() { return $this->stats; }
+	public function SetStats($stats) { $this->stats = $stats; }
 }
