@@ -12,9 +12,11 @@ require_once("../Controllers/AccountController.php");
 <!DOCTYPE html>
 <html>
     <?php HeaderHelper::DrawHeader(); ?>
+	<link rel="stylesheet" type="text/css" href="../Frontend/Styles/site.css">
     <body>
         <h1>Register</h1>
         <form method="post" >
+			<center>
             <label >Enter your email address</label>
             <input type="email" required autofocus name="email" />
             <span class="error"> <?php print($errorResult) ?> </span>
@@ -28,8 +30,10 @@ require_once("../Controllers/AccountController.php");
             <input type="password" pattern=".{5,250}" required 
                    name="confirm-password" id="confirm-password" onkeyup="confirmPasswordsMatch()"/>
             <span id="password-warning-two" class="error hide"> Your Passwords do not match </span>
-
-            <button name="Register">Register</button>
+			
+			<br/><br/>
+            <button name="Register" class="basicbutton">Register</button>
+			</center>
         </form>
         <?php FooterHelper::DrawAnonymousFooter(); ?>
         <script type="text/javascript" src="../Frontend/Scripts/confirmPasswordsMatch.js"></script>
