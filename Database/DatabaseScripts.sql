@@ -62,11 +62,11 @@ CREATE TABLE characters_hp
 
 
 INSERT INTO classes (class, hp_dice_count, skill_points, url) 
-   VALUES ('Paladin', 3, 2, 'http://www.d20srd.org/srd/classes/paladin.htm');
+   VALUES ('Paladin', 10, 2, 'http://www.d20srd.org/srd/classes/paladin.htm');
 INSERT INTO classes (class, hp_dice_count, skill_points, url) 
-   VALUES ('Ranger', 2, 3, 'http://www.d20srd.org/srd/classes/ranger.htm');
+   VALUES ('Ranger', 8, 3, 'http://www.d20srd.org/srd/classes/ranger.htm');
 INSERT INTO classes (class, hp_dice_count, skill_points, url) 
-   VALUES ('Monk', 1, 4, 'http://www.d20srd.org/srd/classes/monk.htm');
+   VALUES ('Monk', 8, 4, 'http://www.d20srd.org/srd/classes/monk.htm');
 
 INSERT INTO races (race, url) 
    VALUES ('Human', 'http://www.d20srd.org/srd/races.htm#humans');
