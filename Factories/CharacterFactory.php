@@ -79,4 +79,9 @@ class CharacterFactory
 		$characterClass = $this->_classRepository->GetClass($className);
 		$character->SetClass($characterClass);
 	}
+	
+	public function SaveCharacterInDatabase($member, $character)
+	{
+		$this->_characterRepository->SaveCharacter($member, $character);
+	}
 }

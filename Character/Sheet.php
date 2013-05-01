@@ -27,6 +27,7 @@ $character = $_SESSION['Character'];
             echo $characterTemplateGenerator->ListCharacter($character);
             echo $hitPointsTemplateGenerator->ListCharacterHitPoints($character->GetHitPoints());
         	$statTemplateGenerator->ListCharacterStats($character->GetStats()); ?>
+        	<button name="LevelUp">Level Up</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
     </body>

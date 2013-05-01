@@ -44,3 +44,16 @@ elseif(isset($_POST['SelectCharacter']))
 
 	header("Location: ../Character/Sheet.php");
 }
+elseif(isset($_POST['LevelUp'])) 
+{
+	$member = $_SESSION['user_name'];
+	$character = $_SESSION['Character'];
+	$characterLevel = $character->GetLevel();
+	if ($characterLevel < 20) {
+		++$characterLevel;
+	}
+	$character->SetLevel($characterLevel);
+	$characterFactory->SaveCharacterInDatabase($member, $character);
+	
+	header("Location: ../Character/Sheet.php");
+}
