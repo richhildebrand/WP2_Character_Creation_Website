@@ -12,7 +12,6 @@ require_once("../Controllers/AccountController.php");
 <!DOCTYPE html>
 <html>
     <?php HeaderHelper::DrawHeader(); ?>
-	<link rel="stylesheet" type="text/css" href="../Frontend/Styles/site.css">
     <body>
         <h1>Get a New Password</h1>
         <form method="post" >

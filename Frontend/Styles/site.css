@@ -54,14 +54,20 @@ ul {
 }
 
 h1 {
-	color: white;
 	background-color: #341d08;
+	background-image: url('strip.jpg');
+	background-repeat: repeat-x;
+	background-position: center;
 	margin-top: 0;
 	margin-right: -.73em;
 	margin-left: -.73em;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	text-align: center; 
+	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+    color: #9c8468;
+    opacity: 0.7;
+
 }
 
 html {

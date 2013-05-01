@@ -5,13 +5,13 @@ class FooterHelper
 	public static function DrawSessionFooter()
 	{
 		print('<footer>');
-			print('<a href="../Character/Create.php">Create New Character</a>');
-			print('<a href="../Character/Select.php">Select Character</a>');
-			print('<a href="../Character/Sheet.php">View Character Sheet</a>');
+			print('<a href="../Character/Create.php" class="basicbutton">Create New Character</a>');
+			print('<a href="../Character/Select.php" class="basicbutton">Select Character</a>');
+			print('<a href="../Character/Sheet.php" class="basicbutton">View Character Sheet</a>');
 	        
 	        print('<div class="adminFooterLinks">');
-	        	print('<a href="../index.html">Home</a>');
-	        	print('<a href="../Account/Edit-Profile.php">Edit Profile</a>');
+	        	print('<a href="../index.html" class="basicbutton">Home</a>');
+	        	print('<a href="../Account/Edit-Profile.php" class="basicbutton">Edit Profile</a>');
         	print('</div>');
 	    print('</footer>');
 	} 
@@ -19,9 +19,9 @@ class FooterHelper
 	public static function DrawAnonymousFooter()
 	{
 		print('<footer>');
-	        print('<a href="../Account/Login.php">Login</a>');
-	        print('<a href="../Account/Register.php">Register</a>');
-	        print('<a href="../Account/Forgot-Password.php">Forgot Password</a>');
+	        print('<a href="../index.html" class="basicbutton">Back</a>');
+	        //print('<a href="../Account/Register.php" class="basicbutton">Register</a>');
+	        //print('<a href="../Account/Forgot-Password.php" class="basicbutton">Forgot Password</a>');
 	    print('</footer>');
 	}
 }
