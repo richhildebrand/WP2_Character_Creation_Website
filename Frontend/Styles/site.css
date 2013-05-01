@@ -30,6 +30,7 @@ body {
   background-image:url('oldpaper2.jpg');
   background-repeat:repeat-x;
   font-family: ‘American Typewriter’, ‘Courier New’, Courier, Monaco, mono;
+  font-weight:bold;
 }
 
 .price:before {
@@ -73,7 +74,7 @@ h1 {
 }
 
 html {
-	background-color: #ac552d;
+	background-color: #080000;
 	color: black;
 }
 
