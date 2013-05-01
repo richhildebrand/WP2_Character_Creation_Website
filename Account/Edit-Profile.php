@@ -33,8 +33,8 @@ $userProfile = $memberRepository->GetUserProfile($userName);
             <input type="text" name="lastname"
             value = <?php print('"' . $userProfile->GetLastName() . '"'); ?>
              />
-            
-            <button name="UpdateProfile">Update Profile</button>
+            <br/><br/>
+            <button name="UpdateProfile" class="basicbutton">Update Profile</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
     </body>
