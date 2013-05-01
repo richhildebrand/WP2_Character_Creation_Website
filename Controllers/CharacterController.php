@@ -3,6 +3,7 @@ include_once("../Models/CharacterPreStatsDto.php");
 include_once("../Models/Character.php");
 include_once("../Factories/CharacterFactory.php");
 include_once("../Database/CharacterRepository.php");
+include_once("../Database/ClassRepository.php");
 include_once("../Database/StatRepository.php");
 include_once("../StatLogic/StartingStatGenerator.php");
 include_once("../Helpers/StringHelper.php");
@@ -48,11 +49,25 @@ elseif(isset($_POST['LevelUp']))
 {
 	$member = $_SESSION['user_name'];
 	$character = $_SESSION['Character'];
+	
+	$hitPoints = $character->GetHitPoints();
+	$currentHitPoints = $hitPoints->GetCurrentHitPoints();
+	$class = $character->GetClass();
+	$characterHitPoints = $class->GetHpDice();
+	
+	$currentHitPoints = $currentHitPoints + $characterHitPoints;
+	if ($currentHitPoints > $hitPoints->GetMaxHitPoints()) {
+		$currentHitPoints = $hitPoints->GetMaxHitPoints();
+	}
+	$hitPoints->SetCurrentHitPoints($currentHitPoints);
+	$character->SetHitPoints($hitPoints);
+	
 	$characterLevel = $character->GetLevel();
 	if ($characterLevel < 20) {
 		++$characterLevel;
 	}
 	$character->SetLevel($characterLevel);
+	
 	$characterFactory->SaveCharacterInDatabase($member, $character);
 	
 	header("Location: ../Character/Sheet.php");
