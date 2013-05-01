@@ -13,6 +13,7 @@ class HitPoints
 	}
 
 	public function GetMaxHitPoints() { return $this->max_hp; }
+	public function SetMaxHitPoints($max_hp) { $this->max_hp = $max_hp; }
 	
 	public function GetCurrentHitPoints() { return $this->current_hp; }
 	public function SetCurrentHitPoints($current_hp) { $this->current_hp = $current_hp; }

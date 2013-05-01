@@ -51,15 +51,15 @@ elseif(isset($_POST['LevelUp']))
 	$character = $_SESSION['Character'];
 	
 	$hitPoints = $character->GetHitPoints();
-	$currentHitPoints = $hitPoints->GetCurrentHitPoints();
+	$maxHitPoints = $hitPoints->GetMaxHitPoints();
 	$class = $character->GetClass();
 	$characterHitPoints = $class->GetHpDice();
 	
-	$currentHitPoints = $currentHitPoints + $characterHitPoints;
-	if ($currentHitPoints > $hitPoints->GetMaxHitPoints()) {
-		$currentHitPoints = $hitPoints->GetMaxHitPoints();
-	}
-	$hitPoints->SetCurrentHitPoints($currentHitPoints);
+	$maxHitPoints = $currentHitPoints + $maxHitPoints;
+	
+	$hitPoints->SetMaxHitPoints($maxHitPoints);
+	$hitPoints->SetCurrentHitPoints($maxHitPoints);
+	
 	$character->SetHitPoints($hitPoints);
 	
 	$characterLevel = $character->GetLevel();
