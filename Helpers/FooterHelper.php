@@ -10,8 +10,8 @@ class FooterHelper
 			print('<a href="../Character/Sheet.php" class="basicbutton">View Character Sheet</a>');
 	        
 	        print('<div class="adminFooterLinks">');
-	        	print('<a href="../index.html" class="basicbutton">Home</a>');
-	        	print('<a href="../Account/Edit-Profile.php" class="basicbutton">Edit Profile</a>');
+	        	print('<a href="../index.html" class="basicbutton"><font color="white">Home</font></a>');
+	        	print('<a href="../Account/Edit-Profile.php" class="basicbutton"><font color="white">Edit Profile</font></a>');
         	print('</div>');
 	    print('</footer>');
 	} 
