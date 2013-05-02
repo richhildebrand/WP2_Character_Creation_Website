@@ -33,8 +33,8 @@ $raceTemplateGenerator = new  RaceTemplateGenerator();
 
             <label>Starting Level: </label>
             <input name="StartingLevel" type="Number" />
-
-            <button name="CreateNewCharacter">Create This Character</button>
+			<br/><br/>
+            <button name="CreateNewCharacter" class="basicbutton">Roll Stats</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
     </body>

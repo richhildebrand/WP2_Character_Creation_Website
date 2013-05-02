@@ -14,8 +14,13 @@ class FooterHelper
 			}
 	        print('<div class="adminFooterLinks">');
 	        	print('<a href="../index.html" class="basicbutton">Home</a>');
+			print('<a href="../Character/Select.php" class="basicbutton">Character List</a>');
+			//print('<a href="../Character/Sheet.php" class="basicbutton">View Character Sheet</a>');
+	        
+	        //print('<div class="adminFooterLinks">');
 	        	print('<a href="../Account/Edit-Profile.php" class="basicbutton">Edit Profile</a>');
-        	print('</div>');
+	        	print('<a href="../index.html" class="basicbutton">Log Out</a>');
+				print('</div>');
 	    print('</footer>');
 	} 
 

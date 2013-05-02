@@ -20,7 +20,7 @@ $statTemplateGenerator = new StatTemplateGenerator();
         <form method="post" >
         	<?php $statTemplateGenerator->ListStats(); ?>
 
-            <button name="RollAllStats">Roll All Stats</button>
+            <button name="RollAllStats" class="basicbutton">Roll All Stats</button>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
     </body>

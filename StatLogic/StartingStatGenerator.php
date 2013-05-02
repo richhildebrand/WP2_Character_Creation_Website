@@ -17,11 +17,24 @@ class StartingStatGenerator
 
 		foreach ($stats as $stat)
 		{
-			$statValue = 3; //TODO: Use StatCalculator
+			$statValue = rollstat(); //TODO: Use StatCalculator
 			$newStat = new Stat($stat->GetStat(), $statValue);
 			array_push($characterStats, $newStat);
 		}
 
 		return $characterStats;
 	}
+	
 }
+
+function rollstat()
+	{
+		$total=0;
+		for($i=0;$i<3;$i++)
+		{
+			$newdie=mt_rand(1,6);
+			$total=$total+$newdie;
+		}
+		return $total;
+	}
+	
