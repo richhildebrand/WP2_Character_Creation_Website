@@ -26,8 +26,8 @@ $character = $_SESSION['Character'];
         	<?php 
             echo $characterTemplateGenerator->ListCharacter($character);
             echo $hitPointsTemplateGenerator->ListCharacterHitPoints($character->GetHitPoints());
-            <input name="AdjustHitPoints" type="text" placeholder="Enter New Hit Points" />
-            <button name="UpdateHitPoints" class="basicbutton">Update Hit Points</button>
+            echo '<input name="AdjustHitPoints" type="text" placeholder="Enter New Hit Points" />';
+            echo '<button name="UpdateHitPoints" class="basicbutton">Update Hit Points</button>';
         	$statTemplateGenerator->ListCharacterStats($character->GetStats()); ?>
         	<button name="LevelUp" class="basicbutton">Level Up</button>
         </form>
