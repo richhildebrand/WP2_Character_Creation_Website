@@ -5,10 +5,7 @@ class FooterHelper
 {	
 	public static function DrawSessionFooter()
 	{
-		$characterFactory = new CharacterFactory();
 		print('<footer>');
-			print('<a href="../Character/Create.php" class="basicbutton">Create New Character</a>');
-
 	        print('<div class="adminFooterLinks">');
 	        	print('<a href="../index.html" class="basicbutton">Home</a>');
 				print('<a href="../Character/Select.php" class="basicbutton">Character List</a>');
