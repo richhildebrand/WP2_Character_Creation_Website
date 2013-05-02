@@ -40,10 +40,15 @@ elseif(isset($_POST['RollAllStats']))
 }
 elseif(isset($_POST['SelectCharacter']))
 {
-	$characterId = $_POST['Character'];
-	$_SESSION['Character'] = $characterFactory->GetCharacterFromDatabase($characterId); 
+	if (!empty($_POST['Character'])) {
+		$characterId = $_POST['Character'];
+		$_SESSION['Character'] = $characterFactory->GetCharacterFromDatabase($characterId); 
 
-	header("Location: ../Character/Sheet.php");
+		header("Location: ../Character/Sheet.php");
+	} else {
+		header("Location: ../Character/Select.php");
+	}
+	
 }
 elseif(isset($_POST['LevelUp'])) 
 {
@@ -55,7 +60,7 @@ elseif(isset($_POST['LevelUp']))
 	$class = $character->GetClass();
 	$characterHitPoints = $class->GetHpDice();
 	
-	$maxHitPoints = $currentHitPoints + $maxHitPoints;
+	$maxHitPoints = $characterHitPoints + $maxHitPoints;
 	
 	$hitPoints->SetMaxHitPoints($maxHitPoints);
 	$hitPoints->SetCurrentHitPoints($maxHitPoints);

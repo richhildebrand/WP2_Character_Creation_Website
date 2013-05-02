@@ -4,7 +4,7 @@ include_once("../Database/CharacterRepository.php");
 include_once("../Database/StatRepository.php");
 include_once("../Database/HitPointRepository.php");
 include_once("../Database/ClassRepository.php");
-include_once("../HItPointLogic/HitPointCalculator.php");
+include_once("../HitPointLogic/HitPointCalculator.php");
 
 class CharacterFactory
 {
