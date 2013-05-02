@@ -18,7 +18,6 @@ label {
 
 button {
 	display: block;
-	margin-top: 5px;
 }
 
 body {
@@ -98,6 +97,7 @@ button.admin {
 }
 
 .basicbutton {
+	margin-top: 5px;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a83528), color-stop(1, #3d1616) );
 	background:-moz-linear-gradient( center top, #a83528 5%, #3d1616 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a83528', endColorstr='#3d1616');
