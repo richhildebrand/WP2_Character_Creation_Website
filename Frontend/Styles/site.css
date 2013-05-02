@@ -122,3 +122,20 @@ button.admin {
 	position:relative;
 	top:1px;
 }
+
+.hpbarfill{
+	background-image: linear-gradient(bottom, rgb(47,102,50) 0%, rgb(10,245,17) 50%, rgb(47,102,50) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(47,102,50) 0%, rgb(10,245,17) 50%, rgb(47,102,50) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(47,102,50) 0%, rgb(10,245,17) 50%, rgb(47,102,50) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(47,102,50) 0%, rgb(10,245,17) 50%, rgb(47,102,50) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(47,102,50) 0%, rgb(10,245,17) 50%, rgb(47,102,50) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(47,102,50)),
+		color-stop(0.5, rgb(10,245,17)),
+		color-stop(1, rgb(47,102,50))
+	);
+}

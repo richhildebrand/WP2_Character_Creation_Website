@@ -50,12 +50,14 @@ public function ListCharacter($character, $inputType = null)
 		<tr>
 			<td> Level: </td>
 			<td> $level </td>
+			<td>|</td>
 			<td> Alignment: </td> 
 			<td> $alignment </td>
 		</tr>
 		<tr>
 			<td>Race: </td>
 			<td> $race </td>
+			<td>|</td>
 			<td> Class:</td>
 			<td> $class </td>
 		</tr>

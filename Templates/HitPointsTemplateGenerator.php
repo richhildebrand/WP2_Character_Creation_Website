@@ -21,12 +21,14 @@ return <<<EOF
 <div>
 <br/>
 <div id="hpBar">
-	<div id="fillin" style="width:$barwidthpx;height:20px; background:red;border:1px solid #000;">
-		<center>
-			<div id="outline" style="width:250px;height:20px;border:1px solid #000;">
-				$current / $max
-			</div>
-		</center>
+	<div id="outline"style="width:250px;height:20px;border:1px solid #000;background:#990000">
+		<div id="fillin" class="hpbarfill" style="width:$barwidthpx;height:20px;">
+			<center>
+				<div id="innertext"style="width:250px;height:20px;">
+					<font style="color:white">$current / $max</font>
+				</div>
+			</center>
+		</div>
 	</div>
 </div>
 <br/>
