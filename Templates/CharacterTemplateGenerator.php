@@ -41,14 +41,25 @@ public function ListCharacter($character, $inputType = null)
 	$alignment = $character->GetAlignment();
 
    return <<<EOF
-	<div>
+	<div> 
+	<table>
 		$inputType
-		<span> $name </span>
-		<span> is a level </span>
-		<span> $level </span>
-		<span> $alignment </span>
-		<span> $race </span>
-		<span> $class </span>
+		<tr>
+			<td> $name </td>
+		</tr>
+		<tr>
+			<td> Level: </td>
+			<td> $level </td>
+			<td> Alignment: </td> 
+			<td> $alignment </td>
+		</tr>
+		<tr>
+			<td>Race: </td>
+			<td> $race </td>
+			<td> Class:</td>
+			<td> $class </td>
+		</tr>
+	</table>
 	<div>
 EOF;
 

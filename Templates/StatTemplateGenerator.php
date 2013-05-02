@@ -55,8 +55,8 @@ public function ListCharacterStat($statName, $statValue)
    	<div>
 			<tr>
 				<td> $statName </td>
-				<td> $statValue </td>
-				<td> $statMod </td>
+				<td><center> $statValue </center></td>
+				<td><center> $statMod </center></td>
 			</tr>
 	</div>
 EOF;
