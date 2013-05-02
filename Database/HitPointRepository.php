@@ -20,6 +20,15 @@ class HitPointRepository
         								  ':max' => $characterHitPoints->GetMaxHitPoints(),
     								  	  ':current' => $characterHitPoints->GetCurrentHitPoints()));
     }
+	
+	public function UpdateCharacterHitPoints($character_id, $characterHitPoints)
+    {
+        $preparedStatement = $this->_dbConnection->prepare('UPDATE characters_hp SET max_hp = :max_hp, current_hp = :current_hp
+         													WHERE character_id = :id');
+        $preparedStatement->execute(array(':max_hp' => $characterHitPoints->GetMaxHitPoints(),
+    								  	  ':current_hp' => $characterHitPoints->GetCurrentHitPoints(),
+										  ':id' => $character_id));
+    }
 
     public function GetCharacterHitPoints($character_id)
     {

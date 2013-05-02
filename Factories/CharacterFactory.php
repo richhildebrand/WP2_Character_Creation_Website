@@ -80,8 +80,13 @@ class CharacterFactory
 		$character->SetClass($characterClass);
 	}
 	
-	public function SaveCharacterInDatabase($member, $character)
+	public function UpdateCharacterInDatabase($member, $character)
 	{
-		$this->_characterRepository->SaveCharacter($member, $character);
+		$this->_characterRepository->UpdateCharacter($member, $character);
+	}
+	
+	public function UpdateCharacterHitPointsInDatabase($character_id, $characterHitPoints)
+	{
+		$this->_hitPointRepository->UpdateCharacterHitPoints($character_id, $characterHitPoints);
 	}
 }

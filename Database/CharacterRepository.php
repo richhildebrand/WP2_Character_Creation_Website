@@ -58,7 +58,7 @@ class CharacterRepository
         return $this->_dbConnection->lastInsertId();
     }
 
-	public function SaveCharacter($email, $character)
+	public function UpdateCharacter($email, $character)
 	{
 		$preparedStatement = $this->_dbConnection->prepare('UPDATE characters SET level = :level WHERE email = :email AND name = :name');
         $preparedStatement->execute(array(':level' => $character->GetLevel(),

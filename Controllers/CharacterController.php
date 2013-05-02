@@ -73,7 +73,8 @@ elseif(isset($_POST['LevelUp']))
 	}
 	$character->SetLevel($characterLevel);
 	
-	$characterFactory->SaveCharacterInDatabase($member, $character);
+	$characterFactory->UpdateCharacterInDatabase($member, $character);
+	$characterFactory->UpdateCharacterHitPointsInDatabase($character->GetId(), $hitPoints);
 	
 	header("Location: ../Character/Sheet.php");
 }

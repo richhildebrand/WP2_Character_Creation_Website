@@ -21,8 +21,8 @@ $characterTemplateGenerator = new  CharacterTemplateGenerator();
             <label>Choose a Character:</label>
             <?php $characterTemplateGenerator->ListMemeberCharacters($member); ?>
 
-            <button name="SelectCharacter" class="basicbutton">Select Character</button>
-            print('<a href="../Character/Create.php" class="basicbutton">Create New Character</a>');
+            <button name="SelectCharacter" class="basicbutton">Select Character</button><br />
+            <a href="../Character/Create.php" class="basicbutton">Create New Character</a>
         </form>
         <?php FooterHelper::DrawSessionFooter(); ?>
     </body>
