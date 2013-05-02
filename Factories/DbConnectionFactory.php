@@ -1,5 +1,5 @@
 <?php
-require_once("../Database/DatabaseConfig_old.php");
+require_once("../Database/DatabaseConfig.php");
 
 class DbConnectionFactory
 {
