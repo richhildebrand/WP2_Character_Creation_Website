@@ -42,11 +42,10 @@ public function ListCharacter($character, $inputType = null)
 
    return <<<EOF
 	<div> 
+		<div>
+ 			$inputType <span> $name</span>
+ 		</div>
 	<table>
-		$inputType
-		<tr>
-			<td> $name </td>
-		</tr>
 		<tr>
 			<td> Level: </td>
 			<td> $level </td>

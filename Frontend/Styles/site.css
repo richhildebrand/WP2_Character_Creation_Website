@@ -18,6 +18,7 @@ label {
 
 button {
 	display: block;
+	margin-top: 5px;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
   padding-top: 0;
   background-image:url('oldpaper2.jpg');
   background-repeat:repeat-x;
-  font-family: ‘American Typewriter’, ‘Courier New’, Courier, Monaco, mono;
+  font-family: ï¿½American Typewriterï¿½, ï¿½Courier Newï¿½, Courier, Monaco, mono;
   font-weight:bold;
 }
 
@@ -69,7 +70,7 @@ h1 {
 	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
     color: #9c8468;
     opacity: 0.7;
-	font-family: ‘American Typewriter’, ‘Courier New’, Courier, Monaco, mono;
+	font-family: ï¿½American Typewriterï¿½, ï¿½Courier Newï¿½, Courier, Monaco, mono;
 
 }
 
@@ -107,7 +108,7 @@ button.admin {
 	border:1px solid #000000;
 	display:inline-block;
 	color:#ffffff;
-	font-family:‘American Typewriter’, ‘Courier New’, Courier, Monaco, mono;;
+	font-family:ï¿½American Typewriterï¿½, ï¿½Courier Newï¿½, Courier, Monaco, mono;;
 	font-size:15px;
 	font-weight:bold;
 	padding:6px 24px;
