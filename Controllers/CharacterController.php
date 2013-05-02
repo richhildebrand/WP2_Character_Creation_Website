@@ -50,6 +50,23 @@ elseif(isset($_POST['SelectCharacter']))
 	}
 	
 }
+elseif(isset($_POST['UpdateHitPoints']))
+{
+	if(!empty($_POST['AdjustHitPoints'])) {
+		$newHitPoints = $_POST['AdjustHitPoints'];
+
+		$character = $_SESSION['Character'];
+		
+		$hitPoints = $character->GetHitPoints();
+		if ($newHitPoints >= -10) {
+			$hitPoints->SetCurrentHitPoints($newHitPoints);	
+		} else {
+			$hitPoints->SetCurrentHitPoints(-10);
+		}
+		
+		$characterFactory->UpdateCharacterHitPointsInDatabase($character->GetId(), $hitPoints);
+	}
+}
 elseif(isset($_POST['LevelUp'])) 
 {
 	$member = $_SESSION['user_name'];
