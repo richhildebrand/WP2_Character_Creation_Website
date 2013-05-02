@@ -38,7 +38,8 @@ class CharacterFactory
 		$this->_statRepository->SaveCharacterStats($characterId, $characterStats);
 
 		$hitPointCalculator = new HitPointCalculator();
-		$characterHitPoints = $hitPointCalculator->GenerateStatingHitPoints($characterPreStatsDto->GetClass());
+		$level = $characterPreStatsDto->GetLevel();
+		$characterHitPoints = $hitPointCalculator->GenerateStatingHitPoints($characterPreStatsDto->GetClass(), $level);
 		$this->_hitPointRepository->SaveCharacterHitPoints($characterId, $characterHitPoints);
 
 		return $this->GetCharacterFromDatabase($characterId);
