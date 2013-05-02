@@ -62,7 +62,7 @@ elseif(isset($_POST['LevelUp']))
 	
 	$maxHitPoints = $characterHitPoints + $maxHitPoints;
 	
-	if ($maxHitPoints < $characterHitPoints * 20) {
+	if ($maxHitPoints <= $characterHitPoints * 20) {
 		$hitPoints->SetMaxHitPoints($maxHitPoints);
 		$hitPoints->SetCurrentHitPoints($maxHitPoints);
 	}
