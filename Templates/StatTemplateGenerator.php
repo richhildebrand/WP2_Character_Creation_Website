@@ -26,12 +26,15 @@ class StatTemplateGenerator
 
 	public function ListCharacterStats($characterStats)
 	{
+		echo "<table border=1>";
+		echo "<tr><td>Stat</td><td>Value</td><td>Modifier</td></tr>";
 		foreach ($characterStats as $stat)
 		{
 			$statname = $stat->GetStat();
 			$value = $stat->GetValue();
 			$this->ListCharacterStat($statname, $value);
 		}
+		echo "</table>";
 	}
 
 //unindented because EOF cannot of proceeding whitespace... lolphp
@@ -47,10 +50,14 @@ EOF;
 //unindented because EOF cannot of proceeding whitespace... lolphp
 public function ListCharacterStat($statName, $statValue)
 {
+	$statMod = floor($statValue/2-5);
    echo  <<<EOF
    	<div>
-		<span> $statName </span>
-		<span> $statValue </span>
+			<tr>
+				<td> $statName </td>
+				<td> $statValue </td>
+				<td> $statMod </td>
+			</tr>
 	</div>
 EOF;
 }

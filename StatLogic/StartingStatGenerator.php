@@ -17,7 +17,7 @@ class StartingStatGenerator
 
 		foreach ($stats as $stat)
 		{
-			$statValue = rollstat(); //TODO: Use StatCalculator
+			$statValue = rollstat(); 
 			$newStat = new Stat($stat->GetStat(), $statValue);
 			array_push($characterStats, $newStat);
 		}
@@ -27,7 +27,7 @@ class StartingStatGenerator
 	
 }
 
-function rollstat()
+function rollstat()	//yes, dice really are this easy
 	{
 		$total=0;
 		for($i=0;$i<3;$i++)

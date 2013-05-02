@@ -92,6 +92,9 @@ INSERT INTO races (race, url)
 INSERT INTO stats_definitions (stat) VALUES ('Strength');
 INSERT INTO stats_definitions (stat) VALUES ('Dexterity');
 INSERT INTO stats_definitions (stat) VALUES ('Constitution');
+INSERT INTO stats_definitions (stat) VALUES ('Intelligence');
+INSERT INTO stats_definitions (stat) VALUES ('Wisdom');
+INSERT INTO stats_definitions (stat) VALUES ('Charisma');
 
 INSERT INTO class_level_benefits VALUES ('Monk', 1, 0, 2, 2, 2);
 INSERT INTO class_level_benefits VALUES ('Monk', 2, 1, 3, 3, 3);
