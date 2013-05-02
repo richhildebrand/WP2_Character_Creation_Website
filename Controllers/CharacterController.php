@@ -52,16 +52,16 @@ elseif(isset($_POST['SelectCharacter']))
 }
 elseif(isset($_POST['UpdateHitPoints']))
 {
-	if(!empty($_POST['AdjustHitPoints'])) {
+	if(!empty($_POST['AdjustHitPoints']) || $_POST['AdjustHitPoints']==0) {
 		$newHitPoints = $_POST['AdjustHitPoints'];
 
 		$character = $_SESSION['Character'];
 		
 		$hitPoints = $character->GetHitPoints();
-		if ($newHitPoints >= -10) {
+		if ($newHitPoints >= 0) {
 			$hitPoints->SetCurrentHitPoints($newHitPoints);	
 		} else {
-			$hitPoints->SetCurrentHitPoints(-10);
+			$hitPoints->SetCurrentHitPoints(0);
 		}
 		
 		$characterFactory->UpdateCharacterHitPointsInDatabase($character->GetId(), $hitPoints);
