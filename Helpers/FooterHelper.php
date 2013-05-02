@@ -8,19 +8,13 @@ class FooterHelper
 		$characterFactory = new CharacterFactory();
 		print('<footer>');
 			print('<a href="../Character/Create.php" class="basicbutton">Create New Character</a>');
-			if ( $characterFactory->GetMemberCharactersFromDatabase($_SESSION['user_name']) ) {
-				print('<a href="../Character/Select.php" class="basicbutton">Select Character</a>');	
-				print('<a href="../Character/Sheet.php" class="basicbutton">View Character Sheet</a>');
-			}
+
 	        print('<div class="adminFooterLinks">');
 	        	print('<a href="../index.html" class="basicbutton">Home</a>');
-			print('<a href="../Character/Select.php" class="basicbutton">Character List</a>');
-			//print('<a href="../Character/Sheet.php" class="basicbutton">View Character Sheet</a>');
-	        
-	        //print('<div class="adminFooterLinks">');
+				print('<a href="../Character/Select.php" class="basicbutton">Character List</a>');
 	        	print('<a href="../Account/Edit-Profile.php" class="basicbutton">Edit Profile</a>');
 	        	print('<a href="../index.html" class="basicbutton">Log Out</a>');
-				print('</div>');
+			print('</div>');
 	    print('</footer>');
 	} 
 
